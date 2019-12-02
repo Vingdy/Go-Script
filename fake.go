@@ -43,6 +43,12 @@ func ReadLine(fileName string) error {//按行读取
 		return err
 	}
 	tarReader, err := gzip.NewReader(f)
+	/*
+	//如果有tar加上这里
+	defer tarReader.Close()
+	tw := tar.NewWriter(tarReader)
+	defer tw.Close()
+	*/
 	if err != nil {
 		return err
 	}
